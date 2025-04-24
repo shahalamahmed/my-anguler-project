@@ -1,0 +1,141 @@
+<div class="container mt-4">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Update Location</h2>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formValue" (ngSubmit)="updateLocation()">
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+              <!-- Name Field -->
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="name"
+                  formControlName="name"
+                  [class.is-invalid]="formValue.get('name')?.invalid && formValue.get('name')?.touched"
+                  required
+                >
+                <div *ngIf="formValue.get('name')?.invalid && formValue.get('name')?.touched" class="invalid-feedback">
+                  Name is required
+                </div>
+              </div>
+  
+              <!-- City Field -->
+              <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="city"
+                  formControlName="city"
+                  [class.is-invalid]="formValue.get('city')?.invalid && formValue.get('city')?.touched"
+                  required
+                >
+                <div *ngIf="formValue.get('city')?.invalid && formValue.get('city')?.touched" class="invalid-feedback">
+                  City is required
+                </div>
+              </div>
+  
+              <!-- State Field -->
+              <div class="mb-3">
+                <label for="state" class="form-label">State</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="state"
+                  formControlName="state"
+                  [class.is-invalid]="formValue.get('state')?.invalid && formValue.get('state')?.touched"
+                  required
+                >
+                <div *ngIf="formValue.get('state')?.invalid && formValue.get('state')?.touched" class="invalid-feedback">
+                  State is required
+                </div>
+              </div>
+  
+              <!-- Photo URL Field -->
+              <div class="mb-3">
+                <label for="photo" class="form-label">Photo URL</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="photo"
+                  formControlName="photo"
+                >
+              </div>
+            </div>
+  
+            <!-- Right Column -->
+            <div class="col-md-6">
+              <!-- Available Units Field -->
+              <div class="mb-3">
+                <label for="availableUnits" class="form-label">Available Units</label>
+                <input 
+                  type="number" 
+                  class="form-control" 
+                  id="availableUnits"
+                  formControlName="availableUnits"
+                  [class.is-invalid]="formValue.get('availableUnits')?.invalid && formValue.get('availableUnits')?.touched"
+                  min="0"
+                >
+                <div *ngIf="formValue.get('availableUnits')?.invalid && formValue.get('availableUnits')?.touched" class="invalid-feedback">
+                  Must be 0 or greater
+                </div>
+              </div>
+  
+              <!-- WiFi Field -->
+              <div class="mb-3">
+                <label for="wifi" class="form-label">WiFi</label>
+                <select 
+                  class="form-select" 
+                  id="wifi"
+                  formControlName="wifi"
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+  
+              <!-- Laundry Field -->
+              <div class="mb-3">
+                <label for="laundry" class="form-label">Laundry</label>
+                <select 
+                  class="form-select" 
+                  id="laundry"
+                  formControlName="laundry"
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Form Buttons -->
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <button 
+              type="button" 
+              class="btn btn-secondary" 
+              (click)="router.navigate(['/locations'])"
+            >
+              Cancel
+            </button>
+            <button 
+              type="submit" 
+              class="btn btn-primary"
+              [disabled]="formValue.invalid || isSubmitting"
+            >
+              <span *ngIf="!isSubmitting">Update Location</span>
+              <span *ngIf="isSubmitting">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Updating...
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,67 @@
+<div class="d-flex flex-column min-vh-100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+      
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/employee">Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/location">locations</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="flex-grow-1">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Student Portal</h5>
+          <ul class="list-unstyled">
+            <li><a routerLink="/student" class="text-white text-decoration-none">Student List</a></li>
+            <li><a routerLink="/add-student" class="text-white text-decoration-none">Add Student</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Employee Portal</h5>
+          <ul class="list-unstyled">
+            <li><a routerLink="/employee" class="text-white text-decoration-none">Employee List</a></li>
+            <li><a routerLink="/add-employee" class="text-white text-decoration-none">Add Employee</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <p>Email: example&#64;example.com</p>
+          <p>Phone: +880 1234 567890</p>
+        </div>
+      </div>
+      <hr class="border-light" />
+      <div class="text-center">
+        &copy; 2025 YourProjectName. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</div>

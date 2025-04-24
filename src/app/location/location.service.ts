@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { location } from './location.model';
 
 @Injectable({
@@ -13,6 +13,18 @@ export class LocationService {
 
   getAllLocation(): Observable<any> {
     return this.httpClient.get(this.baseUrl)
+  }
+
+  getLocationForStudent(): Observable<location[]> {
+    return this.httpClient.get<location[]>(this.baseUrl)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
+  private handleError(error: Observable<any>) {
+    console.error("an error occurred:", error)
+    return throwError(() => new Error('test'))
   }
   createLocation(location: location): Observable<any> {
     return this.httpClient.post(this.baseUrl, location);
@@ -27,5 +39,5 @@ export class LocationService {
   getById(id: string): Observable<any> {
     return this.httpClient.get<location>(`${this.baseUrl}/${id}`);
   }
-  
+
 }

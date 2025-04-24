@@ -1,1 +1,35 @@
-<p>createstudent works!</p>
+<div class="container mt-4">
+    <h2>Create Student</h2>
+    <form [formGroup]="formValue" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label>Name</label>
+        <input class="form-control" formControlName="name" placeholder="Enter name" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Email</label>
+        <input class="form-control" formControlName="email" placeholder="Enter email" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Cell Number</label>
+        <input class="form-control" formControlName="cellNo" placeholder="Enter phone" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Location</label>
+        <select class="form-control" formControlName="location">
+          <option value="" disabled selected>Select a location</option>
+          <option *ngFor="let loc of locationData" [value]="loc.id">{{ loc.name }}</option>
+        </select>
+      </div>
+  
+      <button class="btn btn-primary" type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Submitting...' : 'Create Student' }}
+      </button>
+  
+      <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+    </form>
+  </div>
+  

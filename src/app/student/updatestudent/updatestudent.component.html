@@ -1,1 +1,32 @@
-<p>updatestudent works!</p>
+<div class="container mt-4">
+    <h2>Update Student</h2>
+    <form [formGroup]="formValue" (ngSubmit)="onUpdate()">
+      <div class="mb-3">
+        <label>Name</label>
+        <input class="form-control" formControlName="name" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Email</label>
+        <input class="form-control" formControlName="email" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Cell Number</label>
+        <input class="form-control" formControlName="cellNo" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Location</label>
+        <select class="form-control" formControlName="location">
+          <option value="" disabled>Select location</option>
+          <option *ngFor="let loc of locationData" [value]="loc.id">
+            {{ loc.name }}
+          </option>
+        </select>
+      </div>
+  
+      <button class="btn btn-primary" type="submit">Update Student</button>
+    </form>
+  </div>
+  

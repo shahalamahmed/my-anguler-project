@@ -1,1 +1,56 @@
-<p>viewsstudent works!</p>
+<div class="container mt-4">
+    <!-- Student Table -->
+    <div>
+      <h2 class="mb-4">Student List</h2>
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Students</h2>
+        <button class="btn btn-primary" routerLink="/create-student">
+          <i class="bi bi-plus-circle me-2"></i>Create New Students
+        </button>
+      </div>
+      <!-- Loader -->
+      <div *ngIf="!students.length" class="alert alert-info">
+        Loading students...
+      </div>
+  
+      <!-- Table -->
+      <div class="table-responsive" *ngIf="students.length > 0">
+        <table class="table table-striped table-bordered">
+          <thead class="table-primary">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{ student.id }}</td>
+              <td>{{ student.name }}</td>
+              <td>{{ student.email }}</td>
+              <td>{{ student.cellNo }}</td>
+              <td>
+                <span *ngIf="student.location?.name" class="badge bg-info">
+                  {{ student.location.name }}
+                </span>
+                <span *ngIf="!student.location?.name" class="text-muted">N/A</span>
+              </td>
+              <td>
+                <!-- Future actions like Edit/Delete -->
+                <button class="btn btn-outline-danger" (click)="deleteStudent(student.id)">
+                    <i class="bi bi-trash"> Delete</i>
+                  </button> 
+                  <a [routerLink]="['/update-student', student.id]" class="btn btn-sm btn-warning">
+                    Update
+                  </a>                               
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

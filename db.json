@@ -1,26 +1,6 @@
 {
   "locations": [
     {
-      "name": "Acme Fresh Start Housing",
-      "city": "Chicago",
-      "state": "IL",
-      "photo": "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
-      "availableUnits": 2,
-      "wifi": "No",
-      "laundry": "Yes",
-      "id": "0"
-    },
-    {
-      "id": "1",
-      "name": "A113 Transitional Housing",
-      "city": "Santa Monica",
-      "state": "CA",
-      "photo": "https://angular.io/assets/images/tutorials/faa/brandon-griggs-wR11KBaB86U-unsplash.jpg",
-      "availableUnits": 0,
-      "wifi": false,
-      "laundry": true
-    },
-    {
       "id": "2",
       "name": "Warm Beds Housing Support",
       "city": "Juneau",
@@ -99,16 +79,104 @@
       "availableUnits": 6,
       "wifi": true,
       "laundry": true
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "Raju",
+      "email": "raju@gmail.com",
+      "cellNo": "3456789",
+      "location": {
+        "id": "9",
+        "name": "Capital Safe Towns",
+        "city": "Portland",
+        "state": "OR",
+        "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
+        "availableUnits": 6,
+        "wifi": true,
+        "laundry": true
+      }
     },
     {
-      "id": "a63c",
-      "name": "tangail",
-      "city": "Tangail",
-      "state": "dhaka",
-      "photo": "akfakl",
-      "availableUnits": 2,
-      "wifi": "true",
-      "laundry": "true"
+      "id": 2,
+      "name": "Shah Alam",
+      "email": "shahalam@example.com",
+      "cellNo": "01712345678",
+      "location": {
+        "id": "7",
+        "name": "Hopeful Housing Solutions",
+        "city": "Oakland",
+        "state": "CA",
+        "photo": "https://angular.io/assets/images/tutorials/faa/r-architecture-GGupkreKwxA-unsplash.jpg",
+        "availableUnits": 2,
+        "wifi": true,
+        "laundry": true
+      }
+    },
+    {
+      "id": 3,
+      "name": "Fatima Akter",
+      "email": "fatima@example.com",
+      "cellNo": "01898765432",
+      "location": {
+        "id": "9",
+        "name": "Capital Safe Towns",
+        "city": "Portland",
+        "state": "OR",
+        "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
+        "availableUnits": 6,
+        "wifi": true,
+        "laundry": true
+      }
+    },
+    {
+      "id": 4,
+      "name": "Karim Uddin",
+      "email": "karim@example.com",
+      "cellNo": "01911223344",
+      "location": {
+        "id": "9",
+        "name": "Capital Safe Towns",
+        "city": "Portland",
+        "state": "OR",
+        "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
+        "availableUnits": 6,
+        "wifi": true,
+        "laundry": true
+      }
+    },
+    {
+      "id": 5,
+      "name": "Ayesha Begum",
+      "email": "ayesha@example.com",
+      "cellNo": "01655667788",
+      "location": {
+        "id": "9",
+        "name": "Capital Safe Towns",
+        "city": "Portland",
+        "state": "OR",
+        "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
+        "availableUnits": 6,
+        "wifi": true,
+        "laundry": true
+      }
+    },
+    {
+      "id": 6,
+      "name": "Rahim Khan",
+      "email": "rahim@example.com",
+      "cellNo": "01567891234",
+      "location": {
+        "id": "9",
+        "name": "Capital Safe Towns",
+        "city": "Portland",
+        "state": "OR",
+        "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
+        "availableUnits": 6,
+        "wifi": true,
+        "laundry": true
+      }
     }
   ]
 }
